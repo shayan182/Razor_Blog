@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" asp-page="/Index" >صفحه اصلی <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" asp-page="/Index">صفحه اصلی <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-page="/CreateArticle">ایجاد مقاله</a>
@@ -37,7 +37,7 @@
             <div class="container">
                 <h1 class="display-4">آموزش Razor Pages</h1>
                 <p class="lead">
-                    در این بخض به آموزش Razor Pages در ASP.NET Core 5 به زبان ساده و به همراه یک مثال کاربردی می
+                    در این بخش به آموزش Razor Pages در ASP.NET Core 5 به زبان ساده و به همراه یک مثال کاربردی می
                     پردازیم.
                 </p>
             </div>
@@ -45,7 +45,7 @@
     </div>
     <div class="container">
         <div class="row">
-           @RenderBody()
+            @RenderBody()
         </div>
     </div>
     <footer class="bg-dark mt-5">
@@ -64,6 +64,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 </body>
 
