@@ -5,21 +5,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Razor_Blog.Model;
 
 namespace Razor_Blog.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        public List<ArticleViewModel> Articles { get; set; }
+        private readonly BlogContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(BlogContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public void OnGet()
         {
-
+            Articles = _context.Articles.Select(x => new ArticleViewModel
+            {
+                Id = x.Id,
+                Title = x.Title,
+                Picture = x.Picture,
+                PictrueAlt = x.PictrueAlt,
+                PictureTitle = x.PictureTitle,
+                ShortDescription = x.ShortDescription
+            })
+                .OrderByDescending(x => x.Id)
+                .ToList();
         }
     }
 }

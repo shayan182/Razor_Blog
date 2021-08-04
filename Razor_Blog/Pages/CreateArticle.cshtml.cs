@@ -22,7 +22,7 @@ namespace Razor_Blog.Pages
         {
         }
 
-        public void OnPost(CreateArticle createArticle)
+        public IActionResult OnPost(CreateArticle createArticle)
         {
             if (ModelState.IsValid)
             {
@@ -30,7 +30,11 @@ namespace Razor_Blog.Pages
                 createArticle.PictureTitle, createArticle.ShortDescription, createArticle.Body);
             _context.Articles.Add(article);
             _context.SaveChanges();
-                
+            return RedirectToPage("./Index");
+            }
+            else
+            {
+                return Page();
             }
 
         }
