@@ -22,6 +22,7 @@ namespace Razor_Blog.Model
         public string PictureTitle{ get; set; }
         public string ShortDescription { get; set; }
         public string Body { get; set; }
+        public bool IsDeleted { get; set; }
         public DateTime CreationDate { get; set; }
 
     }
